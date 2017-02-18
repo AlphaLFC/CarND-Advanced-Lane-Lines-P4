@@ -107,6 +107,6 @@ For `challenge_video.mp4`, it has a different perspective. The pipeline also cor
 
 ---
 
-# Section 7: Discussions
+## Section 7: Discussions
 
 The `LaneLineFinder4Video` has done a good job on both `project_video.mp4` and `challenge_video.mp4`. However, `harder_challenge_video.mp4` is beyond the ability of my pipline. In the future, I may try to use DL image segmentation methods to tackle the big challenge.
