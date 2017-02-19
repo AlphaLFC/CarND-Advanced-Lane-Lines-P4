@@ -29,7 +29,7 @@ Here are examples of a calibrated chessboard image and a test image.
 ## Section 2: Binary Filter for Lane Lines
 
 In this section, I designed a `LaneLineFilter` to extract lane line pixels from a camera image into a binary image. I **spared no effort** in trying to find out the best way to extract line pixels. Finally I got the following tricks:
-- **Use LAB color space.** L channel is actually the grayscale of the image, I did sobel gradient calculation on this channel. And B channel actually represents how ***yellow*** the image is, which is perfectly to detect yellow line pixels.
+- **Use LAB color space.** L channel is actually the grayscale of the image, I did sobel gradient calculation on this channel. And B channel actually represents how ***yellow*** the image is, which is perfect to detect yellow line pixels.
 - **Gaussian smooth the absolute sobel gradients.** This to some extent reduces the noise pixels of the sobel results.
 - **Take median-value filtering.** For L & B channels, the pixels smaller than their median value are set to the median. This is pretty cool since it filtered some darker but not lane line pixels, making the sobel gradients clean. This is especially useful when processing `challenge_video.mp4`.
 
