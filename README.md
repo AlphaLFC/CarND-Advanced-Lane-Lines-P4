@@ -1,6 +1,6 @@
 # Advanced Lane Lines (Project 4 of Udacity CarND)
 
-My implemention of this project is presented in [the LaneLineFinder module](LaneLineFinder) and [the jupyter notebook](Advanced-Lane-Lines-P4.ipynb) alternatively. This writeup will discrible how I achieve the project, but I **strongly recommend** reading the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb) directly, which includes both code and illustrations.
+My implementation of this project is presented in [the LaneLineFinder module](LaneLineFinder) and [the jupyter notebook](Advanced-Lane-Lines-P4.ipynb) alternatively. This writeup will discrible how I achieve the project, but I **strongly recommend** reading the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb) directly, which includes both code and illustrations.
 
 This writeup consists of 7 sections as followed:
 - Camera Calibration
