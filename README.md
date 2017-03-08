@@ -17,7 +17,7 @@ This writeup consists of 7 sections as followed:
 
 This section presents the method I did camera calibration. I designed a `CameraCalibrator`. During calibrating, it searches valid chessboard pattens from 9×6 to 2×2 from chessboard calibration images. The `CameraCalibrator` offers an `undistort` function to undistort camera images using calibrated matrixes. It also offers `save_matrix` and `load_matrix` methods.
 
-The code implemention can be found in [calibrate.py](LaneLineFinder/calibrate.py) and Section 1 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
+The code implementation can be found in [calibrate.py](LaneLineFinder/calibrate.py) and Section 1 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
 
 Here are examples of a calibrated chessboard image and a test image.
 
@@ -33,7 +33,7 @@ In this section, I designed a `LaneLineFilter` to extract lane line pixels from 
 - **Gaussian smooth the absolute sobel gradients.** This to some extent reduces the noise pixels of the sobel results.
 - **Take median-value filtering.** For L & B channels, the pixels smaller than their median value are set to the median. This is pretty cool since it filtered some darker but not lane line pixels, making the sobel gradients clean. This is especially useful when processing `challenge_video.mp4`.
 
-The code implemention can be found in [linefilter.py](LaneLineFinder/linefilter.py) and Section 2 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
+The code implementation can be found in [linefilter.py](LaneLineFinder/linefilter.py) and Section 2 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
 
 Here is an example of filtered line pixels. The result is pretty cool, without too much noise pixels.
 
@@ -54,7 +54,7 @@ I designed a class named `WarpPerspective`, it offers both warp and inverse warp
 
 >**NOTE** The default `src` and `dst` points are for the images in `test_images/` and `project_video.mp4`.
 
-The code implemention can be found in [warp.py](LaneLineFinder/warp.py) and Section 3 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
+The code implementation can be found in [warp.py](LaneLineFinder/warp.py) and Section 3 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
 
 Here is an example of a warped and undistorted image. The warped image shows two parallel straight lines.
 
@@ -66,7 +66,7 @@ Here is an example of a warped and undistorted image. The warped image shows two
 
 In this section, I designed a `LaneLineFitTool` collecting several kinds of method locating and fitting lane lines. This is the step right after having a warped and undistorted binary image. It includes line pixel locating methods, fitting methods, visualization methods and calculations of line curve radius and vehicle postion on the road.
 
-The code implemention can be found in [fittool.py](LaneLineFinder/fittool.py) and Section 4 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
+The code implementation can be found in [fittool.py](LaneLineFinder/fittool.py) and Section 4 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
 
 Here is an example illustrating the pipline processing an image from its original format to fitting result. I think it's pretty cool. ^_^
 
@@ -78,7 +78,7 @@ Here is an example illustrating the pipline processing an image from its origina
 
 In this section, I integrated the pipline of detecting lane lines from an image into one class. This pipline **only use blind search** method to locate lane lines. I applied this pipline to all test images, the results were perfect. Actually, for `project_video.mp4` only, this pipline is good enough to process most frames with perfect results.
 
-The code implemention can be found in [linefinder4image.py](LaneLineFinder/linefinder4image.py) and Section 5 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
+The code implementation can be found in [linefinder4image.py](LaneLineFinder/linefinder4image.py) and Section 5 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
 
 Here are two examples using `LaneLineFinder4Image`. The result seems perfect. And both line curvature radius and vehicle position on the road are presented with reasonable values.
 
@@ -99,7 +99,7 @@ In this section, I designed a tool to find lane lines in a video. The main steps
 - When too may bad fits (may lose track), relocate line pixel by blind search;
 - Return averaged good fits over last n records.
 
-The code implemention can be found in [linefinder4video.py](LaneLineFinder/linefinder4video.py) and Section 6 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
+The code implementation can be found in [linefinder4video.py](LaneLineFinder/linefinder4video.py) and Section 6 of the [jupyter notebook](Advanced-Lane-Lines-P4.ipynb).
 
 The [result](project_video_out.mp4) for `project_video.mp4` seems perfect! ^_^
 
